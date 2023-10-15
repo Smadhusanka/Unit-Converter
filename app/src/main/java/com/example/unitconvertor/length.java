@@ -64,188 +64,144 @@ public class length extends AppCompatActivity {
         button = findViewById(R.id.buttonLengthConvert);
 
 
-
-         button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //assign input value
-                stringInputValue = editText.getText().toString();
-                intInputValue = Integer.parseInt(stringInputValue);
+                    //assign input value
+                    stringInputValue = editText.getText().toString();
+                    if(stringInputValue.isEmpty()) {
+                    Toast.makeText(length.this, "Please Enter Value", Toast.LENGTH_SHORT).show();
+                    return;
+                    }
+                    //convert into integer
+                    intInputValue = Integer.parseInt(stringInputValue);
 
-                //assign spinner values
-                inputType = spinnerLength.getSelectedItem().toString();
-                convertType = spinnerLength2.getSelectedItem().toString();
+                    //assign spinner values
+                    inputType = spinnerLength.getSelectedItem().toString();
+                    convertType = spinnerLength2.getSelectedItem().toString();
 
-                if(inputType.equals("Meter"))
-                {
-                    if(convertType.equals("Kilometer"))
-                    {
-                        i = (intInputValue/1000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Centimeter")) {
-                        i = (intInputValue*100.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Millimeter")) {
-                        i = (intInputValue*1000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Micrometer")) {
-                        i = (intInputValue*1000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Nanometer")) {
-                        i = (intInputValue*1000000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else
-                    {
+                    if (inputType.equals("Meter")) {
+                        if (convertType.equals("Kilometer")) {
+                            i = (intInputValue / 1000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Centimeter")) {
+                            i = (intInputValue * 100.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Millimeter")) {
+                            i = (intInputValue * 1000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Micrometer")) {
+                            i = (intInputValue * 1000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Nanometer")) {
+                            i = (intInputValue * 1000000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else {
+                            textView.setText(String.valueOf(intInputValue));
+                        }
+
+                    } else if (inputType.equals("Kilometer")) {
+                        if (convertType.equals("Meter")) {
+                            i = (intInputValue * 1000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Centimeter")) {
+                            i = (intInputValue * 100000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Millimeter")) {
+                            i = (intInputValue * 1000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Micrometer")) {
+                            i = (intInputValue * 1000000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Nanometer")) {
+                            i = (intInputValue * 1000000000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else {
+                            textView.setText(String.valueOf(intInputValue));
+                        }
+                    } else if (inputType.equals("Centimeter")) {
+                        if (convertType.equals("Meter")) {
+                            i = (intInputValue / 100.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Kilometer")) {
+                            i = (intInputValue / 100000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Millimeter")) {
+                            i = (intInputValue * 10.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Micrometer")) {
+                            i = (intInputValue * 10000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Nanometer")) {
+                            i = (intInputValue * 10000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else {
+                            textView.setText(String.valueOf(intInputValue));
+                        }
+                    } else if (inputType.equals("Millimeter")) {
+                        if (convertType.equals("Meter")) {
+                            i = (intInputValue / 1000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Kilometer")) {
+                            i = (intInputValue / 1000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Centimeter")) {
+                            i = (intInputValue / 10.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Micrometer")) {
+                            i = (intInputValue * 1000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Nanometer")) {
+                            i = (intInputValue * 1000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else {
+                            textView.setText(String.valueOf(intInputValue));
+                        }
+                    } else if (inputType.equals("Micrometer")) {
+                        if (convertType.equals("Meter")) {
+                            i = (intInputValue / 1000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Kilometer")) {
+                            i = (intInputValue / 1000000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Centimeter")) {
+                            i = (intInputValue / 10000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Millimeter")) {
+                            i = (intInputValue / 1000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Nanometer")) {
+                            i = (intInputValue * 1000.0);
+                            textView.setText(String.valueOf(i));
+                        } else {
+                            textView.setText(String.valueOf(intInputValue));
+                        }
+                    } else if (inputType.equals("Nanometer")) {
+                        if (convertType.equals("Meter")) {
+                            i = (intInputValue / 1000000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Kilometer")) {
+                            i = (intInputValue / 1000000000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Centimeter")) {
+                            i = (intInputValue / 10000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Millimeter")) {
+                            i = (intInputValue / 1000000.0);
+                            textView.setText(String.valueOf(i));
+                        } else if (convertType.equals("Micrometer")) {
+                            i = (intInputValue / 1000.0);
+                            textView.setText(String.valueOf(i));
+                        } else {
+                            textView.setText(String.valueOf(intInputValue));
+                        }
+                    } else {
                         textView.setText(String.valueOf(intInputValue));
                     }
 
-                }
-                else if (inputType.equals("Kilometer")) {
-                    if(convertType.equals("Meter"))
-                    {
-                        i = (intInputValue*1000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Centimeter")) {
-                        i = (intInputValue*100000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Millimeter")) {
-                        i = (intInputValue*1000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Micrometer")) {
-                        i = (intInputValue*1000000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Nanometer")) {
-                        i = (intInputValue*1000000000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else
-                    {
-                        textView.setText(String.valueOf(intInputValue));
-                    }
-                }
-                else if (inputType.equals("Centimeter")) {
-                    if(convertType.equals("Meter"))
-                    {
-                        i = (intInputValue/100.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Kilometer")) {
-                        i = (intInputValue/100000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Millimeter")) {
-                        i = (intInputValue*10.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Micrometer")) {
-                        i = (intInputValue*10000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Nanometer")) {
-                        i = (intInputValue*10000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else
-                    {
-                        textView.setText(String.valueOf(intInputValue));
-                    }
-                }
-                else if (inputType.equals("Millimeter")) {
-                    if(convertType.equals("Meter"))
-                    {
-                        i = (intInputValue/1000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Kilometer")) {
-                        i = (intInputValue/1000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Centimeter")) {
-                        i = (intInputValue/10.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Micrometer")) {
-                        i = (intInputValue*1000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Nanometer")) {
-                        i = (intInputValue*1000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else
-                    {
-                        textView.setText(String.valueOf(intInputValue));
-                    }
-                }
-                else if (inputType.equals("Micrometer")) {
-                    if(convertType.equals("Meter"))
-                    {
-                        i = (intInputValue/1000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Kilometer")) {
-                        i = (intInputValue/1000000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Centimeter")) {
-                        i = (intInputValue/10000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Millimeter")) {
-                        i = (intInputValue/1000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Nanometer")) {
-                        i = (intInputValue*1000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else
-                    {
-                        textView.setText(String.valueOf(intInputValue));
-                    }
-                }
-                else if (inputType.equals("Nanometer")) {
-                    if(convertType.equals("Meter"))
-                    {
-                        i = (intInputValue/1000000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Kilometer")) {
-                        i = (intInputValue/1000000000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Centimeter")) {
-                        i = (intInputValue/10000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Millimeter")) {
-                        i = (intInputValue/1000000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else if (convertType.equals("Micrometer")) {
-                        i = (intInputValue/1000.0);
-                        textView.setText(String.valueOf(i));
-                    }
-                    else
-                    {
-                        textView.setText(String.valueOf(intInputValue));
-                    }
-                }
-                else {
-                    textView.setText(String.valueOf(intInputValue));
                 }
 
-            }
         });
 
 

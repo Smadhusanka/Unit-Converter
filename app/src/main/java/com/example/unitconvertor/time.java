@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class time extends AppCompatActivity {
 
@@ -67,6 +68,11 @@ public class time extends AppCompatActivity {
 
                 //assign input value
                 stringInputValue = editText.getText().toString();
+                if(stringInputValue.isEmpty()) {
+                    Toast.makeText(time.this, "Please Enter Value", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                //convert into integer
                 intInputValue = Integer.parseInt(stringInputValue);
 
                 //assign spinner values
